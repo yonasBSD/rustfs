@@ -31,9 +31,9 @@ dependencies = [
 
 [[package]]
 name = "aes-gcm"
-version = "0.11.0-rc.4"
+version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "da8c919c118108f144adecad74b425b804ad075580d605d9b33c2d6d1c62a2f8"
+checksum = "fdf011db2e21ce0d575593d749db5554b47fed37aff429e4dc50bc91ac93a028"
 dependencies = [
  "aead",
  "aes",
@@ -918,9 +918,9 @@ dependencies = [
 
 [[package]]
 name = "chacha20poly1305"
-version = "0.11.0-rc.3"
+version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c9ed179664f12fd6f155f6dd632edf5f3806d48c228c67ff78366f2a0eb6b5e"
+checksum = "9b89e1c441e926b9c82a8d023f6e1b7ae0adcfaa7d621814e4d60789bac751cb"
 dependencies = [
  "aead",
  "chacha20",
@@ -4012,6 +4012,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "rustfs-concurrency"
+version = "1.0.0-beta.8"
+dependencies = [
+ "rustfs-io-core",
+ "rustfs-io-metrics",
+ "serde",
+ "thiserror 2.0.18",
+ "tokio",
+ "tokio-util",
+ "tracing",
+]
+
+[[package]]
 name = "rustfs-config"
 version = "1.0.0-beta.8"
 dependencies = [
@@ -4074,6 +4087,7 @@ dependencies = [
  "aws-credential-types",
  "aws-sdk-s3",
  "aws-smithy-http-client",
+ "aws-smithy-runtime-api",
  "aws-smithy-types",
  "base64",
  "base64-simd",
@@ -4103,6 +4117,7 @@ dependencies = [
  "md-5",
  "memmap2",
  "metrics",
+ "moka",
  "num_cpus",
  "opentelemetry",
  "parking_lot",
@@ -4118,6 +4133,7 @@ dependencies = [
  "rmp-serde",
  "rustfs-checksums",
  "rustfs-common",
+ "rustfs-concurrency",
  "rustfs-config",
  "rustfs-credentials",
  "rustfs-data-usage",
@@ -4164,9 +4180,9 @@ dependencies = [
 
 [[package]]
 name = "rustfs-erasure-codec"
-version = "7.0.0"
+version = "7.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fcda6886ece4bfc6917640007a6b9693dc8424a9412d18c3dda5be2431500f31"
+checksum = "6548bf01cd47c0a7809f004b69c49e46e323744d0c23d2b7180843cbef16eafe"
 dependencies = [
  "cc",
  "hashlink",
@@ -4175,7 +4191,7 @@ dependencies = [
  "parking_lot",
  "rayon",
  "smallvec",
- "spin 0.12.0",
+ "spin 0.12.3",
 ]
 
 [[package]]
@@ -4212,6 +4228,17 @@ dependencies = [
  "rustfs-security-governance",
  "rustfs-utils",
  "serde_json",
+]
+
+[[package]]
+name = "rustfs-io-core"
+version = "1.0.0-beta.8"
+dependencies = [
+ "bytes",
+ "memmap2",
+ "rustfs-io-metrics",
+ "thiserror 2.0.18",
+ "tokio",
 ]
 
 [[package]]
@@ -5052,9 +5079,9 @@ checksum = "d5fe4ccb98d9c292d56fec89a5e07da7fc4cf0dc11e156b41793132775d3e591"
 
 [[package]]
 name = "spin"
-version = "0.12.0"
+version = "0.12.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1527984ca054dfca79333baec451042863f485fbee01b7bf6d911de915cac865"
+checksum = "0134f9043ed38b087ac4f7d4af44c79e2c9e5094421fe3164f435ce585953b10"
 
 [[package]]
 name = "spki"
@@ -5693,9 +5720,9 @@ checksum = "b6c140620e7ffbb22c2dee59cafe6084a59b5ffc27a8859a5f0d494b5d52b6be"
 
 [[package]]
 name = "uuid"
-version = "1.23.3"
+version = "1.27.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "144d6b123cef80b301b8f72a9e2ca4370ddec21950d0a103dd22c437006d2db7"
+checksum = "97277d36b9c3ace13e58fa6e753f8b0bbbf302a18dd193240d70f9e29681059a"
 dependencies = [
  "getrandom 0.4.2",
  "js-sys",
@@ -6340,9 +6367,9 @@ checksum = "66fee0b777b0f5ac1c69bb06d361268faafa61cd4682ae064a171c16c433e9e4"
 
 [[package]]
 name = "xxhash-rust"
-version = "0.8.15"
+version = "0.8.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fdd20c5420375476fbd4394763288da7eb0cc0b8c11deed431a91562af7335d3"
+checksum = "550a2b930b62486a393c52d5c3b84bff264b28aa437ed64694d31e93b1757af7"
 
 [[package]]
 name = "yoke"
